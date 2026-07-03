@@ -53,10 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
         body: JSON.stringify({ username, password })
       });
 
-      const data = await response.json();
+      const contentType = response.headers.get("content-type");
+      const data = contentType && contentType.includes("application/json") ? await response.json() : {};
 
       if (!response.ok) {
-        throw new Error(data.error || 'Terjadi kesalahan saat masuk.');
+        throw new Error(data.error || `Terjadi kesalahan saat masuk (Status: ${response.status})`);
       }
 
       // Simpan token dan user ke localStorage
