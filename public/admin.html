@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Panel admin NimeFlix untuk mengelola anime dan episode." />
+  <title>Admin Panel - NimeFlix</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- HEADER & NAVIGASI -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo" id="nav-logo">Nime<span>Flix</span></a>
+      <ul class="nav-links" id="navbar-links">
+        <li><a href="index.html" id="nav-home">Home</a></li>
+        <!-- Nav items injected by nav.js -->
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div class="admin-container">
+      <aside class="admin-sidebar">
+        <button class="admin-sidebar-btn active" id="btn-anime">Anime</button>
+        <button class="admin-sidebar-btn" id="btn-episode">Episode</button>
+      </aside>
+      <section class="admin-main">
+        <!-- Anime Management Panel -->
+        <div class="admin-panel active" id="panel-anime">
+          <h2>Kelola Anime</h2>
+          <form id="anime-form" class="form-row">
+            <div>
+              <label for="anime-judul">Judul</label>
+              <input type="text" id="anime-judul" required />
+            </div>
+            <div>
+              <label for="anime-genre">Genre</label>
+              <input type="text" id="anime-genre" />
+            </div>
+            <div>
+              <label for="anime-thumb">Thumbnail URL</label>
+              <input type="url" id="anime-thumb" />
+            </div>
+            <div>
+              <label for="anime-deskripsi">Deskripsi</label>
+              <textarea id="anime-deskripsi" rows="2"></textarea>
+            </div>
+            <div style="grid-column: 1 / -1; text-align: right; margin-top: 10px;">
+              <button type="submit" class="btn btn-primary btn-sm">Tambah Anime</button>
+            </div>
+          </form>
+          <div class="admin-table-wrapper">
+            <table class="admin-table" id="anime-table">
+              <thead>
+                <tr><th>ID</th><th>Judul</th><th>Genre</th><th>Thumbnail</th><th>Actions</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Episode Management Panel -->
+        <div class="admin-panel" id="panel-episode">
+          <h2>Kelola Episode</h2>
+          <form id="episode-form" class="form-row">
+            <div>
+              <label for="episode-anime-id">Anime ID</label>
+              <input type="number" id="episode-anime-id" required />
+            </div>
+            <div>
+              <label for="episode-number">Nomor Episode</label>
+              <input type="number" id="episode-number" required />
+            </div>
+            <div>
+              <label for="episode-judul">Judul Episode</label>
+              <input type="text" id="episode-judul" />
+            </div>
+            <div>
+              <label for="episode-drive-id">Drive Video ID</label>
+              <input type="text" id="episode-drive-id" required />
+            </div>
+            <div style="grid-column: 1 / -1; text-align: right; margin-top: 10px;">
+              <button type="submit" class="btn btn-primary btn-sm">Tambah Episode</button>
+            </div>
+          </form>
+          <div class="admin-table-wrapper" style="margin-top:20px;">
+            <table class="admin-table" id="episode-table">
+              <thead>
+                <tr><th>ID</th><th>Anime ID</th><th>No.</th><th>Judul</th><th>Drive ID</th><th>Actions</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 <span>NimeFlix</span>. Dibuat dengan &hearts; untuk Tugas Kuliah.</p>
+  </footer>
+
+  <script src="js/admin.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+</html>

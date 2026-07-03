@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Putar video episode anime via iframe Google Drive secara lancar dan cepat.">
+  <title>Putar Episode - NimeFlix</title>
+  
+  <!-- CSS Kustom -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER & NAVIGASI -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo" id="nav-logo">
+        Nime<span>Flix</span>
+      </a>
+      <ul class="nav-links" id="navbar-links">
+        <li><a href="index.html" id="nav-home">Home</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- KONTEN UTAMA -->
+  <main>
+    <div class="watch-container">
+      
+      <!-- Tombol Kembali ke Detail Anime -->
+      <a href="#" class="back-btn" id="btn-back-detail">
+        &larr; Kembali ke Detail Anime
+      </a>
+
+      <!-- Bagian Loading Pemutar -->
+      <div id="player-loading" class="loading">
+        <p>Menyiapkan video player...</p>
+      </div>
+
+      <!-- Wrapper Video & Navigasi -->
+      <div id="player-content" style="display: none;">
+        
+        <!-- Video Player Iframe (Menjaga Aspect Ratio 16:9) -->
+        <div class="video-player-wrapper">
+          <iframe 
+            id="video-iframe" 
+            src="" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <!-- Kontrol Navigasi Episode -->
+        <div class="video-controls">
+          <a href="#" class="btn btn-secondary" id="btn-prev-ep">
+            &larr; Episode Sebelumnya
+          </a>
+          <a href="#" class="btn btn-secondary" id="btn-middle-detail">
+            Daftar Episode
+          </a>
+          <a href="#" class="btn btn-primary" id="btn-next-ep">
+            Episode Selanjutnya &rarr;
+          </a>
+        </div>
+
+        <!-- Info Detail Episode yang Ditonton -->
+        <div class="watch-info">
+          <h2 id="info-anime-judul">Nama Anime</h2>
+          <h1 id="info-episode-judul">Episode X - Judul Episode</h1>
+          
+          <div style="border-top: 1px solid var(--border-color); margin-top: 15px; padding-top: 15px;">
+            <p><strong>Tips Memutar Video Google Drive:</strong></p>
+            <ul style="margin-left: 20px; margin-top: 8px; color: var(--text-secondary); font-size: 13px; display: flex; flex-direction: column; gap: 5px;">
+              <li>Pastikan file video di Google Drive Anda telah diatur hak aksesnya ke <strong>"Anyone with the link can view"</strong> (Siapa saja yang memiliki link dapat melihat).</li>
+              <li>Jika video menampilkan pesan error <i>"Access Denied"</i> atau meminta login, pastikan Anda sudah login ke akun Google di browser ini.</li>
+              <li>Untuk mengganti video dengan anime asli Anda, ganti kolom <code>drive_video_id</code> di database dengan ID unik file Google Drive Anda (ID yang ada di link sharing: <code>drive.google.com/file/d/<b>[ID_DISINI]</b>/view</code>).</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 <span>NimeFlix</span>. Dibuat dengan &hearts; untuk Tugas Kuliah.</p>
+  </footer>
+
+  <!-- Javascript -->
+  <script src="js/watch.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+</html>

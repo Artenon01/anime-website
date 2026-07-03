@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Masuk atau daftarkan akun baru NimeFlix Anda untuk melacak riwayat tontonan anime.">
+  <title>Masuk / Daftar - NimeFlix</title>
+
+  <!-- CSS Kustom -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- HEADER & NAVIGASI -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo" id="nav-logo">
+        Nime<span>Flix</span>
+      </a>
+      <ul class="nav-links" id="navbar-links">
+        <li><a href="index.html" id="nav-home">Home</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- KONTEN UTAMA -->
+  <main>
+    <div class="auth-container">
+      <div class="auth-card">
+        <!-- Tabs untuk berpindah Login / Register -->
+        <div class="auth-tabs">
+          <div class="auth-tab active" id="tab-login">Masuk</div>
+          <div class="auth-tab" id="tab-register">Daftar</div>
+        </div>
+
+        <!-- Alert Notification -->
+        <div id="auth-alert" style="display: none;"></div>
+
+        <!-- Form Login -->
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-username">Username</label>
+            <input type="text" id="login-username" placeholder="Masukkan username Anda" required
+              autocomplete="username">
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" placeholder="Masukkan password Anda" required
+              autocomplete="current-password">
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Masuk Sekarang</button>
+        </form>
+
+        <!-- Form Register (Hidden by default) -->
+        <form id="register-form" style="display: none;">
+          <div class="form-group">
+            <label for="register-username">Username Baru</label>
+            <input type="text" id="register-username" placeholder="Pilih username baru" required
+              autocomplete="username">
+          </div>
+          <div class="form-group">
+            <label for="register-password">Password</label>
+            <input type="password" id="register-password" placeholder="Buat password baru (min. 6 karakter)" required
+              autocomplete="new-password">
+          </div>
+          <div class="form-group">
+            <label for="register-confirm">Konfirmasi Password</label>
+            <input type="password" id="register-confirm" placeholder="Ulangi password baru" required
+              autocomplete="new-password">
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Daftar Akun Baru</button>
+        </form>
+
+        <div class="auth-footer">
+          <p id="auth-footer-text">Belum punya akun? <a href="#" id="link-to-register">Daftar di sini</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 <span>NimeFlix</span>. Dibuat dengan &hearts; untuk Tugas Kuliah.</p>
+  </footer>
+
+  <!-- Javascript -->
+  <script src="js/login.js"></script>
+</body>
+
+</html>

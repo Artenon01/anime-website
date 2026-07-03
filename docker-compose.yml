@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  nimeflix:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nimeflix-app
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - NODE_ENV=production
+    volumes:
+      # Persist database
+      - ./database.db:/app/database.db
+      - ./public:/app/public
+      # Hot reload untuk development (uncomment jika perlu dev mode)
+      # - ./:/app
+      # - /app/node_modules
+    restart: unless-stopped
+    networks:
+      - nimeflix-network
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3001', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+
+networks:
+  nimeflix-network:
+    driver: bridge
