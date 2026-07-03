@@ -1,0 +1,17 @@
+# Node & npm
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Vercel build artefacts
+.vercel/
+.vercel_output/
+.vercel_build_output/
+
+# Environment variables
+.env*
+.env.local
+
+# Database / data yang tidak ingin dipublikasikan
+database.db
+data/users.json   # hapus baris ini bila nanti pakai DB cloud

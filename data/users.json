@@ -1,0 +1,11 @@
+[
+  {
+    "id": "1",
+    "username": "admin",
+    "password": "admin123",
+    "role": "admin",
+    "avatar_url": "",
+    "level": 1,
+    "exp": 0
+  }
+]
